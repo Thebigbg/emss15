@@ -73,7 +73,9 @@ class ApplicationUI : public QObject
         NetworkControl* m_NetworkControl;
         bb::system::SystemDialog* m_Dialog;
         SystemToast* m_toast;
+        //Attributes for the external display
         ExternalDisplay extDisplay;
+        bb::ImageData      imageData;
 
         signals:
         void displaySign();

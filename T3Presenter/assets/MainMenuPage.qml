@@ -5,6 +5,10 @@ TabbedPane {
     Tab {
         title: qsTr("Host a Presentation")
         imageSource: "asset:///images/host.jpg"
+        delegate: Delegate {
+
+        }
+        
         NavigationPane {
             id: hostNavigationPane
             firstPage: HostPresentationPage {}

@@ -77,6 +77,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/background.png) \
         $$quote($$BASEDIR/assets/images/bubble.png) \
         $$quote($$BASEDIR/assets/images/host.jpg) \
+        $$quote($$BASEDIR/assets/images/index.jpg) \
         $$quote($$BASEDIR/assets/images/join.jpg) \
         $$quote($$BASEDIR/assets/images/logo_rub.png) \
         $$quote($$BASEDIR/assets/images/next.jpg) \

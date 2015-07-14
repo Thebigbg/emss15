@@ -79,33 +79,36 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app) : QObject(app)
         res = QObject::connect(this, SIGNAL(displaySign()), this, SLOT(ondisplaySign()));
         Q_ASSERT(res);
 
-        bb::ImageData      imageData1, imageData2;
+
 
             extDisplay.setResolution(RES1920x1080);
             extDisplay.open(); //Open a new external display
 
-            imageData1 = bb::utility::ImageConverter::decode(QUrl("asset:///images/logo_rub.png"));
-            imageData2 = bb::utility::ImageConverter::decode(QUrl("asset:///images/team.png"));
+            //imageData1 = bb::utility::ImageConverter::decode(QUrl("asset:///images/logo_rub.png"));
+            imageData = bb::utility::ImageConverter::decode(QUrl("asset:///images/team.png"));
 
             //Show imageData2 as default image on external display when starting the app
-            extDisplay.showImage(imageData2);
+            extDisplay.showImage(imageData);
 }
 
 //Show diff picturs on external display and blackberry display
 void ApplicationUI::ondisplaySign() {
     // open external screen (via HDMI)
 
-            bb::ImageData      imageData;
+
         //extDisplay.setResolution(RES1920x1080);
             //Close the external display -> thus close the default picture
-            extDisplay.close();
+            //extDisplay.close();
             //Open up a new external display
-            extDisplay.open();
+            //extDisplay.open();
 
             //Set the picture to show on the external display by getting the current page
+    imageData = bb::utility::ImageConverter::decode(QUrl("asset:///images/index.jpg"));
+    extDisplay.showImage(imageData);
             imageData = bb::utility::ImageConverter::decode(QUrl("file://"+m_PresentationControl->getCurrentPage()));
 
             qDebug() << "FIle:" << m_PresentationControl->getCurrentPage();
+
             //Show the image set above
             extDisplay.showImage(imageData);
 }
